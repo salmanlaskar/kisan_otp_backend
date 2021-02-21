@@ -1,0 +1,31 @@
+{
+  "name": "kisan_otp_backend",
+  "version": "1.0.0",
+  "description": "one tap otp for kisan(backend)",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-basic-auth": "^1.2.0",
+    "mongoose": "^5.11.17",
+    "morgan": "^1.10.0",
+    "twilio": "^3.56.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salmanlaskar/kisan_otp_backend.git"
+  },
+  "author": "Salman Laskar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salmanlaskar/kisan_otp_backend/issues"
+  },
+  "homepage": "https://github.com/salmanlaskar/kisan_otp_backend#readme"
+}
