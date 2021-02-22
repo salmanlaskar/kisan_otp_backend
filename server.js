@@ -47,7 +47,7 @@ app.use(
 );
 require("./app/routes/message.routes")(app);
 require("./app/routes/user.routes")(app);
-const PORT = process.env.SERVER_PORT || 7000;
+const PORT = process.env.SERVER_PORT || 9000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

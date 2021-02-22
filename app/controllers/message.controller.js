@@ -20,15 +20,17 @@ exports.getMessage = (req, res) => {
       users.map((val) => {
         userMap.set(val._id.toString(), val);
       });
-      res.send(
-        data.map((e) => {
-          tempUser = userMap.get(e.id);
-          e.firstName = tempUser.firstName;
-          e.lastName = tempUser.lastName;
-          e.phoneNumber = tempUser.phoneNumber;
-          return e;
-        })
+      data = data.map((e) => {
+        tempUser = userMap.get(e.id);
+        e.firstName = tempUser.firstName;
+        e.lastName = tempUser.lastName;
+        e.phoneNumber = tempUser.phoneNumber;
+        return e;
+      });
+      data.sort(
+        (a, b) => b.receivedMessageTimeStamp - a.receivedMessageTimeStamp
       );
+      res.send(data);
     })
     .catch((e) => {
       logIt.logIt("ERROR", "GET /api/message : " + e);
