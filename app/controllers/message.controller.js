@@ -48,12 +48,21 @@ exports.sendMessage = async (req, res) => {
     })
     .then((message) => {
       console.log(message.sid);
-      Message.create({ message: bodyData, id, otp })
+      Message.create({
+        message: bodyData,
+        id,
+        otp,
+        receivedMessageTimeStamp: Date.now(),
+      })
         .then((data) => {
           res.send({ message: "success" });
         })
         .catch((e) => {
           res.status(500).send({ message: "Internal server error" });
         });
+    })
+    .catch((e) => {
+      logIt.logIt("ERROR", "POST /api/message : " + e);
+      res.status(422).send({ message: "number invalid or not verified" });
     });
 };

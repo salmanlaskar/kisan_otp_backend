@@ -20,6 +20,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 require("./app/models");
 
+app.get("/", (req, res) => {
+  res.send("testing...");
+});
 //Basic authentication setup
 app.use(
   basicAuth({
